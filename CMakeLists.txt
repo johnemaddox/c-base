@@ -5,6 +5,10 @@ project(app VERSION 0.1.0)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 14)
 
+# -Werror to treat compiler warnings as errors
+# -Wno-psabi suppress ABI warning for changes affecting 32-bit ARM (RasPi)
+add_compile_options(-Werror -Wno-psabi)
+
 include_directories(src)
 add_subdirectory(src)
 
