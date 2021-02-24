@@ -5,7 +5,7 @@ build_dir="./out"
 app_name="app"
 
 usage () {
-    echo "Commands: test, debug, release, clean"
+    echo "Commands: test, debug, release, run, clean"
 }
 
 make_all () {
@@ -38,15 +38,16 @@ if [ -n "${1+x}" ]; then
         "debug")
             echo ">> Building ${app_name} debug <<"
             make_all
-            echo ""
-            echo ">> Running ${app_name} debug <<"
-            ${build_dir}/src/${app_name}
             ;;
         "release")
             make_clean
             echo ""
             echo ">> Building ${app_name} release <<"
             make_all "Release"
+            ;;
+        "run")
+            echo ">> Running ${app_name} <<"
+            ${build_dir}/src/${app_name}
             ;;
         "clean")
             make_clean
