@@ -46,8 +46,14 @@ if [ -n "${1+x}" ]; then
             make_all "Release"
             ;;
         "run")
+            target=${build_dir}/src/${app_name}
+            if [ ! -f "$target" ]; then
+                echo ">> Building ${app_name} debug <<"
+                make_all
+                echo ""
+            fi
             echo ">> Running ${app_name} <<"
-            ${build_dir}/src/${app_name}
+            $target
             ;;
         "clean")
             make_clean
