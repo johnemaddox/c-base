@@ -8,7 +8,7 @@
             "name": "GDB",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/out/src/app",
+            "program": "${workspaceFolder}/out/src/base_project",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}/src",

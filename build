@@ -2,7 +2,7 @@
 set -euo pipefail
 
 build_dir="./out"
-app_name="app"
+app_name="base_project"
 
 usage () {
     echo "Commands: test, debug, release, run, clean"

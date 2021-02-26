@@ -2,6 +2,8 @@
 
 This is a base project for C/C++ projects using Google Test and cmake.
 
+This project name is in 3 locations, search for "base_project".
+
 ## Build Commands
 
 * **./build test:** Compiles with debug flags and runs tests.
