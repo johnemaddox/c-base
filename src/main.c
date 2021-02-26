@@ -10,12 +10,15 @@
 
 #include "example.h"
 #include <stdio.h>
+#include <ring_buffer.h>
 
 int main() {
     char* hello_txt = hello();
     int value = double_val(2);
 
     printf("OUTPUT: %s %i\n", hello_txt, value);
+
+    printf("Library: %i\n", rb_init());
 
     return 0;
 }

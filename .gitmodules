@@ -1,6 +1,0 @@
-[submodule "lib/googletest"]
-	path = lib/googletest
-	url = git@github.com:google/googletest.git
-[submodule "lib/c-shared"]
-	path = lib/c-shared
-	url = git@github.com:johnemaddox/c-shared.git
