@@ -63,7 +63,7 @@ if [ -n "${1+x}" ]; then
             ./build clean
             ;;
         "run")
-            target=${build_dir}/src/${app_name}
+            target=${build_dir}/bin/${app_name}
             if [ ! -f "$target" ]; then
                 echo ">> Building ${app_name} debug <<"
                 make_all

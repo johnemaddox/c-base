@@ -10,7 +10,7 @@
 
 #include "example.h"
 #include <stdio.h>
-#include <ring_buffer.h>
+#include <common/ring_buffer.h>
 
 int main() {
     char* hello_txt = hello();
