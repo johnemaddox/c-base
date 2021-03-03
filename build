@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-build_dir="./out"
+base_dir="$(pwd)"
+build_dir="$base_dir/out"
 app_name="base_project"
 
 usage () {
-    echo "Commands: test, debug, release, run, clean"
+    echo "Commands: test, debug, release, (sudo) install, run, clean"
 }
 
 make_all () {
@@ -15,9 +16,9 @@ make_all () {
     fi
 
     cmake -S . -B "${build_dir}" -DCMAKE_BUILD_TYPE=${release}
-    cd ./out
+    cd $build_dir
     make all
-    cd ..
+    cd $base_dir
 }
 
 make_clean () {
@@ -33,7 +34,7 @@ if [ -n "${1+x}" ]; then
             make_all
             echo ""
             echo ">> Running ${app_name} tests <<"
-            ${build_dir}/test/${app_name}_test
+            ${build_dir}/bin/${app_name}_test
             ;;
         "debug")
             echo ">> Building ${app_name} debug <<"
@@ -44,6 +45,22 @@ if [ -n "${1+x}" ]; then
             echo ""
             echo ">> Building ${app_name} release <<"
             make_all "Release"
+            ;;
+        "install")
+            if [ "$(whoami)" != "root" ]; then
+                echo "ERROR: Must run as root to install library."
+                exit 1
+            fi
+            ./build release
+            echo ""
+            echo ">> Copying library to /usr/local <<"
+            if [ ! -d "/usr/local/include/$app_name" ]; then
+                mkdir /usr/local/include/$app_name
+            fi
+            cp -vi $base_dir/inc/* /usr/local/include/$app_name
+            cp -vi $build_dir/lib/* /usr/local/lib/
+            echo ""
+            ./build clean
             ;;
         "run")
             target=${build_dir}/src/${app_name}
