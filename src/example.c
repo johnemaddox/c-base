@@ -10,10 +10,12 @@
 
 #include "example.h"
 
-char* hello () {
+char* hello ()
+{
     return "Hello";
 }
 
-int double_val (int val) {
+int double_val (int val)
+{
     return val * 2;
 }

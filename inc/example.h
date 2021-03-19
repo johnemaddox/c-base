@@ -19,7 +19,6 @@ char* hello ();
 
 int double_val (int val);
 
-
 #ifdef __cplusplus
     }
 #endif

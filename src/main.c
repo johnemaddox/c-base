@@ -12,7 +12,8 @@
 #include <stdio.h>
 #include <common/ring_buffer.h>
 
-int main() {
+int main()
+{
     char* hello_txt = hello();
     int value = double_val(2);
 
