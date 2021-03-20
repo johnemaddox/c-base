@@ -4,13 +4,21 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "debug",
+            "label": "run",
             "type": "shell",
-            "command": "./build debug",
+            "command": "./build run",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "focus": true,
+            }
+        },
+        {
+            "label": "debug",
+            "type": "shell",
+            "command": "./build debug",
             "presentation": {
                 "focus": true,
             }
