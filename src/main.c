@@ -19,7 +19,5 @@ int main()
 
     printf("OUTPUT: %s %i\n", hello_txt, value);
 
-    printf("Library: %i\n", rb_init());
-
     return 0;
 }
