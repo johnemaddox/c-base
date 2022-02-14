@@ -10,7 +10,6 @@
 
 #include "example.h"
 #include <stdio.h>
-#include <common/ring_buffer.h>
 
 int main()
 {
