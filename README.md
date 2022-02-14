@@ -10,7 +10,6 @@ This is a base project for C/C++ projects using Google Test and cmake.
 - **./build test:** Compiles with debug flags and runs tests.
 - **./build debug:** Compiles with debug flags.
 - **./build release:** Compiles without debug flags.
-- **./build install:** Builds release and copies headers and library files to /usr/local.
 - **./build run:** Runs compiled program.
 - **./build clean:** Removes ./out (build) directory.
 
