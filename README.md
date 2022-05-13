@@ -3,7 +3,6 @@
 This is a base project for C/C++ projects using Google Test and cmake.
 
 - The project name is in 3 locations, search for "base_project".
-- ring_buffer.h is a part of the common code library.
 
 ## Build Commands
 
@@ -17,7 +16,6 @@ This is a base project for C/C++ projects using Google Test and cmake.
 
 - gtest
 - pthread
-- common_lib (Common Code Library)
 
 ## Ubuntu Packages
 
