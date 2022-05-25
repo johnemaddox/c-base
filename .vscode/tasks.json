@@ -16,14 +16,6 @@
             }
         },
         {
-            "label": "debug",
-            "type": "shell",
-            "command": "./build debug",
-            "presentation": {
-                "focus": true,
-            }
-        },
-        {
             "label": "test",
             "type": "shell",
             "command": "./build test",
@@ -33,6 +25,14 @@
             },
             "presentation": {
                 "focus": true
+            }
+        },
+        {
+            "label": "debug-build",
+            "type": "shell",
+            "command": "./build debug",
+            "presentation": {
+                "focus": true,
             }
         },
         {

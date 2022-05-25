@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-base_dir="$(pwd)"
-build_dir="$base_dir/out"
+build_dir="$(pwd)/out"
 app_name="base_project"
 
-usage () {
-    echo "Commands: test, debug, release, (sudo) install, run, clean"
+usage()
+{
+    echo "Commands: test, debug, release, run, clean"
 }
 
-make_all () {
+make_all()
+{
     release="Debug"
     if [ -n "${1+x}" ]; then
         release="$1"
@@ -19,7 +20,8 @@ make_all () {
     cmake --build "${build_dir}" -- all
 }
 
-make_clean () {
+make_clean()
+{
     echo ">> Cleaning ${app_name} <<"
     rm -rf "${build_dir}"
     echo "Removed ${build_dir}"
@@ -32,7 +34,7 @@ if [ -n "${1+x}" ]; then
             make_all
             echo ""
             echo ">> Running ${app_name} tests <<"
-            make -C "${build_dir}" test
+            ${build_dir}/bin/tests
             ;;
         "debug")
             echo ">> Building ${app_name} debug <<"

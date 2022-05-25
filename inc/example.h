@@ -11,8 +11,8 @@
 #ifndef EXAMPLE_H
 #define EXAMPLE_H
 
-char* hello ();
+char* hello();
 
-int double_val (int val);
+int double_val(int val);
 
 #endif /* EXAMPLE_H */

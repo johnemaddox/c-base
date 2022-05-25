@@ -15,10 +15,9 @@ This is a base project for C/C++ projects using Google Test and cmake.
 ## External Libraries
 
 - gtest
-- pthread
 
 ## Ubuntu Packages
 
 ```bash
-sudo apt install build-essential libc6-dev-i386 gdb cmake
+sudo apt install build-essential gdb cmake
 ```
