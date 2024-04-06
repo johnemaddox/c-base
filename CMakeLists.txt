@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16.3)
 
-project(base_project LANGUAGES C CXX)
+message(STATUS "MY_PROJECT=${MY_PROJECT}")
+
+project(${MY_PROJECT} LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 14)

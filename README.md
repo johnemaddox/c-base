@@ -2,7 +2,10 @@
 
 This is a base project for C/C++ projects using Google Test and cmake.
 
-- The project name is in 3 locations, search for "base_project".
+- The project name comes from the base directory name and is used in 3 locations. Be aware of this when creating a base project directory.
+    - .vscode/launch.json
+    - build
+    - CMakeLists.txt
 
 ## Build Commands
 
