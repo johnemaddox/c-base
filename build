@@ -11,12 +11,12 @@ usage()
 
 make_all()
 {
-    release="Debug"
+    build_type="Debug"
     if [ -n "${1+x}" ]; then
-        release="$1"
+        build_type="$1"
     fi
 
-    cmake -S . -B "${build_dir}" -DCMAKE_BUILD_TYPE="${release}" -DMY_PROJECT="${project}"
+    cmake -S . -B "${build_dir}" -DCMAKE_BUILD_TYPE="${build_type}" -DMY_PROJECT="${project}"
     cmake --build "${build_dir}" -- all
 }
 
