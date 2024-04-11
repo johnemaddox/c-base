@@ -6,7 +6,9 @@ project="${PWD##*/}"
 
 usage()
 {
-    echo "Commands: test, debug, release, run, clean"
+    echo "##############################################"
+    echo "# Commands: test, debug, release, run, clean #"
+    echo "##############################################"
 }
 
 make_all()
@@ -32,7 +34,6 @@ if [ -n "${1+x}" ]; then
         "test")
             echo ">> Building ${project} tests <<"
             make_all
-            echo ""
             echo ">> Running ${project} tests <<"
             ${build_dir}/bin/tests
             ;;
@@ -42,7 +43,6 @@ if [ -n "${1+x}" ]; then
             ;;
         "release")
             make_clean
-            echo ""
             echo ">> Building ${project} release <<"
             make_all "Release"
             ;;
@@ -51,7 +51,6 @@ if [ -n "${1+x}" ]; then
             if [ ! -f "$target" ]; then
                 echo ">> Building ${project} debug <<"
                 make_all
-                echo ""
             fi
             echo ">> Running ${project} <<"
             $target
